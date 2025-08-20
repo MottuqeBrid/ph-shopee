@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
       "lh3.googleusercontent.com",
       "encrypted-tbn0.gstatic.com",
       "xunddbangladesh.com",
+      "www.tex.cm",
     ],
   },
 };

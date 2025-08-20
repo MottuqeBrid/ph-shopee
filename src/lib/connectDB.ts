@@ -9,6 +9,7 @@ export const connectDB = async () => {
     }
     await mongoose.connect(DB_URI);
   } catch (err) {
+    console.log(err);
     process.exit(1);
   }
 };

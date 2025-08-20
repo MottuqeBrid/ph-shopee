@@ -44,8 +44,17 @@ export async function POST(req: Request): Promise<Response> {
   }
 }
 
-export async function GET() {
+export async function GET(req: Request) {
+  const { searchParams } = new URL(req.url);
+  const userEmail = searchParams.get("user");
+
+  let query: Record<string, unknown> = {};
+  if (userEmail) {
+    query = { "createdBy.email": userEmail.trim() }; // <-- FIXED
+  }
+  console.log(query);
   await connectDB();
-  const products = await Product.find({}).sort({ createdAt: -1 });
+  const products = await Product.find(query).sort({ createdAt: -1 });
+  console.log(products);
   return Response.json({ success: true, data: products });
 }

@@ -52,8 +52,7 @@ export default function AddProductPage() {
           email: session.user?.email || "Unknown",
         },
       };
-
-      const res = await fetch("/api/products", {
+      const res = await fetch("/api/product", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

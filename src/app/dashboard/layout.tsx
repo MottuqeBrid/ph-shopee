@@ -1,3 +1,4 @@
+import Footer from "@/sharedComponent/Footer";
 import Navbar from "@/sharedComponent/Navbar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -5,6 +6,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <section>
       <Navbar />
       <main className="max-w-7xl mx-auto"> {children}</main>
+      <Footer />
     </section>
   );
 }
