@@ -25,6 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="light">
+      <title>ph-shopee</title>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
