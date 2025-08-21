@@ -40,11 +40,9 @@ export default function Products() {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      console.log(user);
       if (!user?.email) return;
       const res = await fetch(`/api/product?user=${user.email}`);
       const data = await res.json();
-      console.log(data);
       setProducts(data?.data || []);
     };
     fetchProducts();

@@ -34,7 +34,6 @@ export async function POST(req: Request): Promise<Response> {
       status: 201,
     });
   } catch (err) {
-    console.error(err);
     return new Response(
       JSON.stringify({ success: false, error: "Failed to create product." }),
       {
@@ -52,9 +51,8 @@ export async function GET(req: Request) {
   if (userEmail) {
     query = { "createdBy.email": userEmail.trim() }; // <-- FIXED
   }
-  console.log(query);
+
   await connectDB();
   const products = await Product.find(query).sort({ createdAt: -1 });
-  console.log(products);
   return Response.json({ success: true, data: products });
 }

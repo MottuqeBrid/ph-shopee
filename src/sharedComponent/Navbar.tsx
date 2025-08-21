@@ -20,7 +20,6 @@ export default function Navbar() {
 
   useEffect(() => {
     if (session) {
-      console.log(session);
       setUser(session?.user as User);
     } else {
       setUser(null);
