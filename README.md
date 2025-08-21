@@ -1,5 +1,116 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+# PH-Shopee
+
+PH-Shopee is a modern e-commerce web application for buying and selling products. It features user authentication, product management, and a responsive UI. Built with Next.js, Tailwind CSS, DaisyUI, NextAuth, and MongoDB.
+
+## 📁 Folder Structure
+
+```
+ph-shopee/
+├── public/                  # Static assets
+├── src/
+│   ├── app/                 # Next.js app directory
+│   │   ├── (auth)/          # Auth pages (login)
+│   │   ├── (home)/          # Home and product pages
+│   │   ├── api/             # API routes (Next.js route handlers)
+│   │   └── dashboard/       # Dashboard (add-product, profile)
+│   ├── lib/                 # Database connection
+│   ├── models/              # Mongoose models
+│   └── sharedComponent/     # Reusable UI components
+├── .env                     # Environment variables
+├── package.json
+├── README.md
+└── ...
+```
+
+## 🛠️ Setup & Installation
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/MottuqeBrid/ph-shopee.git
+   cd ph-shopee
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   # or yarn install
+   ```
+3. Create a `.env` file and add your MongoDB URI and NextAuth credentials:
+   ```env
+   MONGODB_URI=your_mongodb_uri
+   NEXTAUTH_URL=http://localhost:3000
+   GOOGLE_CLIENT_ID=your_google_client_id
+   GOOGLE_CLIENT_SECRET=your_google_client_secret
+   NEXTAUTH_SECRET=your_nextauth_secret
+   ```
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+5. Visit [http://localhost:3000](http://localhost:3000)
+
+## 🗺️ Route Summary
+
+### Main Routes
+
+- `/` — Home page
+- `/products` — All products
+- `/products/[id]` — Product details
+- `/dashboard` — Dashboard (requires login)
+- `/dashboard/add-product` — Add new product (requires login)
+- `/dashboard/profile` — User profile (requires login)
+- `/dashboard/profile/_component/products` — User's products table (requires login)
+- `/auth/login` — Login page
+
+### API Routes
+
+- `/api/product` — GET all products, POST new product
+- `/api/product/[id]` — GET, PUT, DELETE a product by ID
+- `/api/auth/[...nextauth]` — NextAuth authentication
+
+## 🚀 Live Demo
+
+[https://ph-shopee.vercel.app](https://ph-shopee.vercel.app)
+
+## 🗂️ Main Routes
+
+- `/` — Home page
+- `/products` — All products
+- `/products/[id]` — Product details
+- `/dashboard` — Dashboard (requires login)
+- `/dashboard/add-product` — Add new product (requires login)
+- `/dashboard/profile` — User profile (requires login)
+- `/dashboard/profile/_component/products` — User's products table (requires login)
+- `/auth/login` — Login page
+
+## 🛠️ API Routes
+
+- `/api/product` — GET all products, POST new product
+- `/api/product/[id]` — GET, PUT, DELETE a product by ID
+- `/api/auth/[...nextauth]` — NextAuth authentication
+
+## 📝 Features
+
+- User authentication (Google OAuth via NextAuth)
+- Add, view, and delete products
+- Responsive UI with Tailwind CSS & DaisyUI
+- Protected dashboard routes
+- Profile management
+
+## 📦 Tech Stack
+
+- Next.js 14+
+- React 18+
+- Tailwind CSS & DaisyUI
+- MongoDB & Mongoose
+- NextAuth.js
+- Vercel (deployment)
+
+---
+
+© {new Date().getFullYear()} PH-Shopee. All rights reserved.
+
 ## Getting Started
 
 First, run the development server:
